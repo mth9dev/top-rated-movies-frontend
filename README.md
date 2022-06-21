@@ -8,4 +8,7 @@ Run `ng serve` to start a server. Open browser and navigate to `http://localhost
 1. Angular framework
 2. Angular Material Ui framework
 3. Tailwindcss for CSS utilities
-3. subsink npm package as easy unsubscription for memory leaks.
+4. subsink npm package as easy unsubscription for memory leaks.
+
+## Deployed Url
+This application is deployed on Firebase with url ,`https://top-rated-movies-91b01.web.app`.
