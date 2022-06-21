@@ -1,0 +1,46 @@
+<div *ngIf="movie" class="w-full grid grid-cols-4 gap-x-6">
+    <div class="sm:block hidden">
+        <div class="sm:h-72 md:h-96 lg:h-full">
+        <img class="object-cover w-full h-full" [src]="posterPath + movie.poster_path" alt="Photo of a Shiba Inu">
+        </div>
+    </div>
+    <div class="flex flex-col col-span-3">
+        <span class="text-2xl text-bold">{{movie.title}}</span>
+
+        <div class="flex text-base text-gray-500">
+            {{genresText}}
+        </div>
+
+        <div class="flex items-center text-base text-gray-500">
+            {{movie.release_date | date: 'MM/dd/yyyy'}}
+        </div>
+
+        <div class="flex text-base text-gray-500 mt-6">
+            <span class="flex items-center mr-6">
+                <mat-icon aria-label="rating" class="text-yellow-500 mr-3">star</mat-icon>
+                <span>{{movie.vote_average}}</span>
+            </span>
+            <span class="flex items-center">
+                <mat-icon aria-label="count" class="mr-3">person_outline</mat-icon>
+                <span>{{movie.vote_count | number}}</span>
+            </span>
+        </div>
+
+        <div class="flex text-base text-gray-500 mt-6 italic">
+            {{movie.tagline}}
+        </div>
+
+        <div class="flex flex-col text-base mt-6">
+            <span class="text-bold">Overview</span>
+            <span class="text-gray-500">{{movie.overview}}</span>            
+        </div>
+
+        <div *ngIf="trailerKey" class="mt-6">
+            <a mat-raised-button color="primary" [href]="'https://www.youtube.com/watch?v='+trailerKey" target="_blank">
+                <mat-icon class="mr-2">play_arrow</mat-icon>
+                <span class="mr-1">Trailer</span>
+            </a>
+        </div>
+
+    </div>
+</div>

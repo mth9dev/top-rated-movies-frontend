@@ -1,0 +1,7 @@
+<div class="grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 xs:grid-cols-2 grid-cols-1 gap-6">
+  <app-movie-card *ngFor="let i of movies" [movie]="i"></app-movie-card>  
+</div>
+<mat-paginator *ngIf="pagination" class="mt-6"
+    [length]="pagination?.count" [pageIndex]="pagination?.page"
+    [pageSize]="20" [pageSizeOptions]="[20]" [ngClass]="{'pointer-events-none': isLoading}">
+  </mat-paginator>
